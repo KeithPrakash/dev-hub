@@ -1,0 +1,75 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #362c2c;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  
+}
+
+
+.navOuter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #252940;;
+  height:50px;
+  width: 100%;
+  margin-top:0;
+  padding-top: 0px;
+  color:blue;
+  align-self: center;
+ display: flex;
+ align-items: center;
+justify-content: space-between;
+  
+}
+
+.navOuter p{
+  color: #ffffff;
+}
+.navOuter p:hover{
+  color: rgb(182, 248, 0);
+}
+.navAbout{
+  text-align: left;
+  padding-left: 10px;
+}
+
+.navRefresh{
+   text-align:right;
+    padding-right: 10px;
+}
+.app-outer{
+position: relative;
+width:600px;
+}
+
+.homeContainer{
+height:100vh;
+width:100%;
+border:1px solid white
+}
+.list{
+   height:auto;
+   border: 1px solid white;
+}
+
+.preview{
+  height: 150px;
+  width:100%;
+  color:aliceblue;
+  background-color: black;
+}
+
+.preview h1{
+  color:aliceblue
+}

@@ -1,0 +1,22 @@
+{
+    "blogs":[
+        {
+        "title":"Theres a new app called google.. Check it out",
+        "link":"http://google.com",
+        "date":"05/01/2023",
+        "id":1
+
+    },
+    {
+        "title":" How to google like a pro?",
+        "link":"http://google.com",
+        "date":"05/01/2023",
+        "id":2
+    },
+{
+     "title":"Who is the God of Linux? Let me share something interesting..",
+        "link":"http://google.com",
+        "date":"05/01/2023",
+        "id":3
+}]
+}
