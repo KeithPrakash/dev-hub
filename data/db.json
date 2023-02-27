@@ -1,6 +1,7 @@
 {
     "blogs":[
         {
+         "comments":["nice articale","wonderdful site"],
         "title":"Theres a new app called google.. Check it out",
         "link":"http://google.com",
         "date":"05/01/2023",
@@ -8,12 +9,14 @@
 
     },
     {
+     "comments":["nice articale","wonderdful site"],
         "title":" How to google like a pro?",
         "link":"http://google.com",
         "date":"05/01/2023",
         "id":2
     },
 {
+      "comments":["nice articale","wonderdful site"],
      "title":"Who is the God of Linux? Let me share something interesting..",
         "link":"https://www.britannica.com/biography/Linus-Torvalds",
         "date":"05/01/2023",
