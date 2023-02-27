@@ -44,15 +44,24 @@ justify-content: space-between;
 .navAbout{
   text-align: left;
   padding-left: 10px;
-  color:orangered;
+  color:rgb(39, 172, 233);
 }
 .nabAbout:hover{
   cursor: pointer;
 }
-
-.navRefresh{
+.navHome p {
+  color:rgba(242, 255, 5, 0.932);
+  font-family: 'Roboto';
+}
+.navAddPost{
    text-align:right;
     padding-right: 10px;
+    color:#7cb5d3
+    
+}
+.navAddPost:hover{
+  cursor: pointer;
+  color: rgb(1, 255, 251);
 }
 .app-outer{
 position: relative;
@@ -97,6 +106,15 @@ justify-content: center;
   
   
 }
+.comment{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  
+}
+.comment:hover{
+  color:#7cb5d3
+}
 .preview h1{
   color:rgb(42, 48, 54)
 }
@@ -104,4 +122,14 @@ justify-content: center;
 .preview:hover{
   cursor: pointer;
   background-color: #0d0c0c;
+}
+
+.aboutContainter{
+  display: flex;
+  justify-content: center;
+  margin:80px;
+  width:'60%';
+  height:100vh;
+
+  color:rgb(123, 123, 123)
 }

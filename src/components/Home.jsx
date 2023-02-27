@@ -1,8 +1,10 @@
 import { Grid } from '@mui/material';
 import { useEffect,useState } from 'react';
-import Icon from "@mui/material/Icon";
+import InsertLinkRoundedIcon from "@mui/icons-material/InsertLinkRounded";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
+import { TypeAnimation } from "react-type-animation";
 const Home = () => {
+ 
 const [blog, setBlogs] = useState(null);
 const [isPending,setIsPending]= useState(true);
 
@@ -29,20 +31,29 @@ let count = 0;
                       </div>
                       <div className="story">
                         {" "}
-                        <p style={{ color: "white" }}>{data.title}</p>
+                        <p style={{ color: "white" }}>
+                          <TypeAnimation
+                           
+                            sequence={[`${data.title}`,500]}
+                            wrapper="div"
+                            cursor={false}
+                            repeat={false}
+                          
+                          />
+                        </p>
                         <a
                           style={{
-                            color: "#464AB5",
-                            fontSize: 12,
-                            hover: "green",
+                            color: "#39ff14 ",
+                            fontSize: 16,
+                            hover: "#39ff14",
                           }}
                           href={data.link}
                         >
-                          Read Me
+                          <InsertLinkRoundedIcon />
                         </a>{" "}
                         <p style={{ fontSize: 12 }}>{data.date}</p>
                       </div>
-                      <div className="like">
+                      <div className="comment">
                         <ChatBubbleOutlineIcon />
                       </div>
                     </div>
