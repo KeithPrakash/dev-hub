@@ -16,7 +16,6 @@ const Nav = () => {
   const termLines = [
     {
       text: "Welcome To Dev Hub",
-     
     }
 
   ];
@@ -56,22 +55,34 @@ const Nav = () => {
           </Grid>
           <Grid item xs={6}>
             <div className="navHome">
-              
-                <TypeAnimation
-                  sequence={[2000, "Dev-Hub"]}
-                  wrapper="div"
-                  cursor={true}
-                  repeat={false}
-                />
-              
+              <TypeAnimation
+                sequence={[2000, "Dev-Hub"]}
+                wrapper="div"
+                cursor={true}
+                repeat={false}
+              />
             </div>
           </Grid>
           <Grid item xs={3}>
+          { 
+            !change?(
             <div className="navAddPost">
               <Link to="/post">
-                <PostAddIcon />
+                <IconButton
+                  onClick={() => setNav(!change)}
+                  style={{
+                    backgroundColor: "transparent",
+                    color: "white",
+                    size: "large"
+                  }}
+                >
+                  <PostAddIcon />
+                </IconButton>
               </Link>
             </div>
+            ):null
+          }
+
           </Grid>
         </Grid>
       </div>

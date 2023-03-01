@@ -65,16 +65,15 @@ justify-content: space-between;
 .navAddPost{
   display: flex;
   align-items:center;
-  margin: 10px;;
   justify-content: right;
    text-align:right;
-    padding-right: 10px;
-    color:#7cb5d3
+   padding-right: 10px;
+  
     
 }
-.navAddPost:hover{
+.navAddPost Link:hover{
   cursor: pointer;
-  color: rgb(1, 255, 251);
+  color: rgb(103, 69, 182);
 }
 .app-outer{
 position: relative;
@@ -103,6 +102,8 @@ width:100%;
 }
 .num{
   width:60px;
+  min-width:20px;
+  color:#788599
 }
 .story{
   display:flex;
@@ -110,19 +111,13 @@ width:100%;
   text-align: left;
   width:85%;
 }
-.like{
-  flex:1;
-  display: flex;
-display: flex;
-align-items: center;
-justify-content: center;
-  
-  
-}
 .comment{
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  /* border:1px solid red; */
+  flex:1;
+  align-items:center;
+  justify-content:right;
+  padding:15px;
   
 }
 .comment:hover{
@@ -170,5 +165,22 @@ justify-content: center;
   
   padding :60px;
 
+
+}
+
+/* ===============comment section */
+
+.postTitle{
+  min-height: 30px;
+  max-height: auto;
+  padding:10px;
+  text-align: left;
+  border:0.5px solid #3a4246;
+}
+.comment-preview{
+  background-color: #211c1c;
+  padding:5px;
+  border-bottom: 1px solid rgb(104, 94, 80);
+  text-align: left;
 
 }

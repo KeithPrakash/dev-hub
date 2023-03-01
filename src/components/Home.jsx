@@ -2,14 +2,17 @@ import { Grid, LinearProgress } from '@mui/material';
 import { useEffect,useState } from 'react';
 import InsertLinkRoundedIcon from "@mui/icons-material/InsertLinkRounded";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
-
+import Pagination from "@mui/material/Pagination";
 import { TypeAnimation } from "react-type-animation";
 import { Link } from 'react-router-dom';
 const Home = () => {
 
 const [blog, setBlogs] = useState(null);
 const [isPending,setIsPending]= useState(true);
-
+const [page, setPage] = useState(1);
+const handleChange = (event, value) => {
+  setPage1(value);
+};
 
 let count = 0;
     useEffect(()=>{
@@ -59,7 +62,7 @@ let count = 0;
                         <p style={{ fontSize: 12 }}>{data.date}</p>
                       </div>
                       <div className="comment">
-                        <Link to="/comment">
+                        <Link to="/comment" state={{ data: data }}>
                           <ChatBubbleOutlineIcon />
                         </Link>
                       </div>
@@ -69,6 +72,14 @@ let count = 0;
               ))
             : null}
         </div>
+        <Pagination
+          count={10}
+           page={1}
+          onChange={handleChange}
+          variant="outlined"
+          shape="rounded"
+          color="secondary"
+        />
       </div>
     );
 }

@@ -1,9 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { TextField, Button } from "@mui/material";
+import { TextField, Button, Alert } from "@mui/material";
 import { useState } from "react";
 const date = new Date("2015-03-25").toJSON().split("T")[0];
 import { TypeAnimation } from "react-type-animation";
-console.log(date);
 const Post = () => {
   const [title, setTitle] = useState("");
   const [link, setLink] = useState("");
@@ -18,9 +17,7 @@ const Post = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(blog)
 
-    }).then(() => {
-      navigate("/");
-    }).catch(e=>console.log(e))
+    }).then(() => navigate('/')).catch(e=>console.log(e))
   };
   
   return (
