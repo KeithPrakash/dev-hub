@@ -1,10 +1,12 @@
-import { Grid } from '@mui/material';
+import { Grid, LinearProgress } from '@mui/material';
 import { useEffect,useState } from 'react';
 import InsertLinkRoundedIcon from "@mui/icons-material/InsertLinkRounded";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
+
 import { TypeAnimation } from "react-type-animation";
+import { Link } from 'react-router-dom';
 const Home = () => {
- 
+
 const [blog, setBlogs] = useState(null);
 const [isPending,setIsPending]= useState(true);
 
@@ -21,6 +23,11 @@ let count = 0;
     return (
       <div className="homeContainer">
         <div className="list">
+          {isPending ? (
+            <div className="loading">
+              <LinearProgress color="success" />
+            </div>
+          ) : null}
           {blog
             ? blog.map((data) => (
                 <Grid container>
@@ -30,15 +37,12 @@ let count = 0;
                         <p>{(count += 1)}</p>
                       </div>
                       <div className="story">
-                        {" "}
                         <p style={{ color: "white" }}>
                           <TypeAnimation
-                           
-                            sequence={[`${data.title}`,500]}
+                            sequence={[`${data.title}`, 500]}
                             wrapper="div"
                             cursor={false}
                             repeat={false}
-                          
                           />
                         </p>
                         <a
@@ -48,13 +52,16 @@ let count = 0;
                             hover: "#39ff14",
                           }}
                           href={data.link}
+                          target="_blank"
                         >
                           <InsertLinkRoundedIcon />
-                        </a>{" "}
+                        </a>
                         <p style={{ fontSize: 12 }}>{data.date}</p>
                       </div>
                       <div className="comment">
-                        <ChatBubbleOutlineIcon />
+                        <Link to="/comment">
+                          <ChatBubbleOutlineIcon />
+                        </Link>
                       </div>
                     </div>
                   </Grid>

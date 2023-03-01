@@ -1,10 +1,13 @@
 import { Typography } from "@mui/material";
 
 const About = () => {
-    
+   
     return (
         
       <div className="aboutContainter">
+
+
+      
         <Typography>
           Welcome to Dev-Hub, the ultimate online community for tech enthusiasts
           and programming nerds. Our website is dedicated to providing you with
