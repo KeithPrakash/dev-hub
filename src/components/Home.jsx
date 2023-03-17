@@ -1,23 +1,30 @@
 import { Grid, LinearProgress } from '@mui/material';
 import { useEffect,useState } from 'react';
-// import InsertLinkRoundedIcon from "@mui/icons-material/InsertLinkRounded";
-// import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
+import InsertLinkRoundedIcon from "@mui/icons-material/InsertLinkRounded";
+import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 
-// import { TypeAnimation } from "react-type-animation";
-// import { Link } from 'react-router-dom';
+import { TypeAnimation } from "react-type-animation";
+import { Link } from 'react-router-dom';
 const Home = () => {
-const [blog, setBlogs] = useState(null);
+  let count=0;
+const [blog, setBlogs] = useState([]);
 const [isPending,setIsPending]= useState(true);
-const url = "http://localhost:8000/api/v1/blog/list";
+const url = "http://localhost:8000/api/v1/blog/list/";
 
 
     useEffect(()=>{
           fetch(url, {})
             .then((res) => res.json())
-            .then((res) => {
+            .then((data) => {
+           console.log(data.data.value);
               setIsPending(false);
-               setBlogs(res);
-              console.log(res);
+              try{
+               setBlogs(data.data.value)
+              }catch{err=>{
+                console.log(err)
+              }}
+
+           
               console.log(blog);
             })
             .catch((error) => console.log(error));
@@ -34,8 +41,7 @@ const url = "http://localhost:8000/api/v1/blog/list";
             ? blog.map((data) => (
                 <Grid container>
                   <Grid item xs={12}>
-                  <p>`${data.title}</p>
-                    {/* <div className="preview" key={data._id}>
+                    <div className="preview" key={data._id}>
                       <div className="num">
                         <p>{(count += 1)}</p>
                       </div>
@@ -60,19 +66,19 @@ const url = "http://localhost:8000/api/v1/blog/list";
                           <InsertLinkRoundedIcon />
                         </a>
                         <p style={{ fontSize: 12 }}>{data.date}</p>
+                        <span style={{ fontSize: 12 }}> comments{data.comments.length}</span>
                       </div>
                       <div className="comment">
                         <Link to="/comment" state={{ data: data }}>
                           <ChatBubbleOutlineIcon />
                         </Link>
                       </div>
-                    </div> */}
+                    </div>
                   </Grid>
                 </Grid>
               ))
             : null}
         </div>
-       
       </div>
     );
 }

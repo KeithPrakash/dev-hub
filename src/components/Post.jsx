@@ -12,7 +12,7 @@ const Post = () => {
     e.preventDefault();
     const blog = {title,link,date};
     console.log(blog);
-    fetch("http://localhost:3000/api/v1/blog/save", {
+    fetch("http://localhost:8000/api/v1/blog/save", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(blog),
@@ -57,7 +57,7 @@ const Post = () => {
           />
 
           <Button
-            style={{ marginTop: "15px", height: "50px" }}
+            style={{ marginTop: "15px", height: "50px"}}
             margin="dense"
             color="success"
             variant="contained"
