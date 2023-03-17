@@ -1,28 +1,27 @@
 import { Grid, LinearProgress } from '@mui/material';
 import { useEffect,useState } from 'react';
-import InsertLinkRoundedIcon from "@mui/icons-material/InsertLinkRounded";
-import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
-import Pagination from "@mui/material/Pagination";
-import { TypeAnimation } from "react-type-animation";
-import { Link } from 'react-router-dom';
-const Home = () => {
+// import InsertLinkRoundedIcon from "@mui/icons-material/InsertLinkRounded";
+// import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 
+// import { TypeAnimation } from "react-type-animation";
+// import { Link } from 'react-router-dom';
+const Home = () => {
 const [blog, setBlogs] = useState(null);
 const [isPending,setIsPending]= useState(true);
-const [page, setPage] = useState(1);
-const handleChange = (event, value) => {
-  setPage1(value);
-};
+const url = "http://localhost:8000/api/v1/blog/list";
 
-let count = 0;
+
     useEffect(()=>{
-          fetch('http://localhost:8000/blogs',{}).then( (res)=>{return res.json()}).then((data)=>{
-            setIsPending(false);
-            setBlogs(data);
-            console.log(data);
-          }
-          ).catch(error=>console.log(error))
-    },[])
+          fetch(url, {})
+            .then((res) => res.json())
+            .then((res) => {
+              setIsPending(false);
+               setBlogs(res);
+              console.log(res);
+              console.log(blog);
+            })
+            .catch((error) => console.log(error));
+    },[url])
     return (
       <div className="homeContainer">
         <div className="list">
@@ -35,7 +34,8 @@ let count = 0;
             ? blog.map((data) => (
                 <Grid container>
                   <Grid item xs={12}>
-                    <div className="preview" key={data.id}>
+                  <p>`${data.title}</p>
+                    {/* <div className="preview" key={data._id}>
                       <div className="num">
                         <p>{(count += 1)}</p>
                       </div>
@@ -66,20 +66,13 @@ let count = 0;
                           <ChatBubbleOutlineIcon />
                         </Link>
                       </div>
-                    </div>
+                    </div> */}
                   </Grid>
                 </Grid>
               ))
             : null}
         </div>
-        <Pagination
-          count={10}
-           page={1}
-          onChange={handleChange}
-          variant="outlined"
-          shape="rounded"
-          color="secondary"
-        />
+       
       </div>
     );
 }

@@ -12,12 +12,13 @@ const Post = () => {
     e.preventDefault();
     const blog = {title,link,date};
     console.log(blog);
-    fetch("http://localhost:8000/blogs", {
+    fetch("http://localhost:3000/api/v1/blog/save", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(blog)
-
-    }).then(() => navigate('/')).catch(e=>console.log(e))
+      body: JSON.stringify(blog),
+    })
+      .then(() => navigate("/"))
+      .catch((e) => console.log(e));
   };
   
   return (
