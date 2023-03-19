@@ -5,6 +5,7 @@ import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 
 import { TypeAnimation } from "react-type-animation";
 import { Link } from 'react-router-dom';
+
 const Home = () => {
   let count=0;
 const [blog, setBlogs] = useState([]);
@@ -56,7 +57,7 @@ const url = "http://localhost:8000/api/v1/blog/list/";
                         </p>
                         <a
                           style={{
-                            color: "#39ff14 ",
+                            color: "#cddc39",
                             fontSize: 16,
                             hover: "#39ff14",
                           }}
@@ -65,8 +66,17 @@ const url = "http://localhost:8000/api/v1/blog/list/";
                         >
                           <InsertLinkRoundedIcon />
                         </a>
-                        <p style={{ fontSize: 12 }}>{data.date}</p>
-                        <span style={{ fontSize: 12 }}> comments{data.comments.length}</span>
+                        <div className="preview-bottom">
+                          <p style={{ fontSize: 12, color: "#90a4ae" }}>
+                            {data.date}
+                          </p>
+                          <span style={{ fontSize: 12, color: "#90a4ae" }}>
+                            Comments
+                            <span style={{ marginLeft: 5, fontSize: 12 }}>
+                              {data.comments.length}
+                            </span>
+                          </span>
+                        </div>
                       </div>
                       <div className="comment">
                         <Link to="/comment" state={{ data: data }}>

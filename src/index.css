@@ -131,7 +131,32 @@ width:100%;
   cursor: pointer;
   background-color: #0d0c0c;
 }
+.preview-bottom{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.preview-bottom span{
+  margin-left: 10px;
+  font-size: px;
 
+}
+.comment-post-outer{
+  min-height:50px;
+ border: 0.2px solid rgb(104, 94, 80);
+background-color: #111213;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+.textArea{
+  margin:0px;
+  margin-top: 10px;
+  width:70vw;
+  flex:1;
+  min-height: 40px;
+}
 .aboutContainter{
   display: flex;
   justify-content: center;
@@ -139,7 +164,7 @@ width:100%;
   width:'60%';
   height:100vh;
          
-  color:rgb(123, 123, 123)
+  color:rgb(75, 64, 64)
 }
 
 .postContainer{
